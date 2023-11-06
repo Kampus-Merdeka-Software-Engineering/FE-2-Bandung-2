@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>GO!Semarang</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="ourteam.html">Our Team</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="container1">
+        <div class="centered">
+          <h1 class="title">SEMARANG</h1>
+          <h3 class="subtitle">
+            Would you like to explore tourist attractions in Semarang?
+            <br />
+            Let's discover the best destinations in Semarang City with us.
+          </h3>
+        </div>
+
+        <!-- image slider start -->
+        <div class="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <input type="radio" name="radio-btn" id="radio4" />
+            <div class="gelap"></div>
+            <!-- slide images start -->
+            <div class="slide first icenter">
+              <img src="Assets/1.jpg" alt="" />
+            </div>
+            <div class="slide icenter">
+              <img src="Assets/2.jpg" alt="" />
+            </div>
+            <div class="slide icenter">
+              <img src="Assets/3.jpg" alt="" />
+            </div>
+            <div class="slide icenter">
+              <img src="Assets/4.jpg" alt="" />
+            </div>
+            <!-- slide images end -->
+            <!-- navigation start -->
+            <div class="navigation">
+              <label
+                for="radio1"
+                class="nav-btn"
+                data-target="auto-btn1"
+                onclick="changeSlide(1)"
+              ></label>
+              <label
+                for="radio2"
+                class="nav-btn"
+                data-target="auto-btn2"
+                onclick="changeSlide(2)"
+              ></label>
+              <label
+                for="radio3"
+                class="nav-btn"
+                data-target="auto-btn3"
+                onclick="changeSlide(3)"
+              ></label>
+              <label
+                for="radio4"
+                class="nav-btn"
+                data-target="auto-btn4"
+                onclick="changeSlide(4)"
+              ></label>
+            </div>
+            <!-- navigation end -->
+          </div>
+          <!-- image slider end -->
+        </div>
+
+        <script type="text/javascript">
+          function changeSlide(slideNumber) {
+            document.getElementById("radio" + slideNumber).checked = true;
+          }
+
+          var counter = 1;
+          setInterval(function () {
+            document.getElementById("radio" + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+              counter = 1;
+            }
+          }, 5000); // Pergantian slide setiap 5 detik
+        </script>
+
+        <!-- <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="1.jpg" alt="Image 1">
+                    <div class="carousel-slide">
+                        <img src="image-190-768x497.png" alt="Image 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="d733c332-6f33-409a-a16a-ec0d5211828e-1645682011565-55b809e7c4f6fbdeb88ba474ed5a3780.jpg" alt="Image 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="20210211_212346.jpg" alt="Image 3">
+                    </div>
+                </div> -->
+      </div>
+      <div class="container2">
+        <h1 class="title2">WELCOME TO SEMARANG</h1>
+        <h2 class="subtitle2">
+          Known as the capital city of Central Java Province, it has a long
+          history and is also famous for its important seaport.
+        </h2>
+        <div>
+          <p>
+            As the centre of Central Java's provincial government, business,
+            politics and culture, Semarang is one of the largest cities in the
+            province.
+            <br />
+            <br />
+            Known for its coastal beauty, Semarang is a meeting point for many
+            ethnic, cultural, religious and other diverse groups in the Central
+            Java region of Indonesia.
+          </p>
+          <img src="Assets/2.jpg" alt="" />
+        </div>
+      </div>
+      <div class="container3">
+        <div>
+          <h1>History of Semarang</h1>
+          <img src="Assets/kotalamarevamp.webp" alt="" />
+          <p>
+            In the 15th century, Chinese emperors emissary Zheng He, otherwise
+            known as Admiral Cheng Ho, set foot on Java. From the 17th century
+            onwards, Semarang became an entrepot for spices, also a busy harbor
+            for trade and passengers when travel was made predominantly by sea.
+            The city of Semarang, capital of the province of Central Java, sits
+            precisely in the center of the northern seaboard of the fertile and
+            densely populated island of Java.
+          </p>
+          <p>
+            This strategic position of Semarang has made the city a melting pot
+            of Chinese, Indian Arab, and European cultures. In the older part of
+            the city near the harbor named Kota Lama, or the Oudstadt, stroll
+            around to explore the historic old buildings in what was once the
+            European commercial district.
+          </p>
+        </div>
+      </div>
+      <div class="container4">
+        <div>
+          <h1>Popular Destination</h1>
+          <div class="search">
+            <form action="#">
+              <input
+                type="text"
+                placeholder="What are you searching for?"
+                name="search"
+              />
+              <button>
+                <i class="fa fa-search" style="font-size: 18px"> </i>
+              </button>
+            </form>
+          </div>
+          <div class="destination">
+            <div class="top-left">
+              <img src="Assets/1.jpg" alt="" />
+              <p>Lawang Sewu</p>
+              <p>Semarang</p>
+            </div>
+            <div class="top-right">Top Right</div>
+            <div class="content">Content</div>
+            <div class="bottom-left">Bottom Left</div>
+            <div class="bottom-center">Bottom Center</div>
+            <div class="bottom-right">Bottom Right</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

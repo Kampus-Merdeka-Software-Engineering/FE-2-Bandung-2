@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #f2f6ff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* overflow: hidden; */
+}
+
+nav {
+  z-index: 999;
+  position: absolute;
+  background-color: #00000079;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* background-color: #0074d9 */
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.slider {
+  position: flex;
+  width: 100%;
+  height: 100vh; /* Ubah tinggi menjadi 100vh untuk mengisi seluruh layar */
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
+  display: flex;
+  transition: 2s;
+}
+
+.slide {
+  width: 20%;
+  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
+  transition: 2s;
+  display: inline;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
+  object-fit: cover; /* Pastikan gambar mengisi area slide dengan benar */
+}
+
+/* CSS for navigation */
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-btn {
+  border: 2px solid #f2f6ff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  margin: 0 10px;
+}
+
+.nav-btn:hover {
+  background: #f2f6ff;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.container1 {
+  text-align: center;
+  /* padding: 20px; */
+  /* border: 1 px solid #f2f6ff; */
+  /* border: 5px; */
+  width: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  height: fit-content;
+}
+
+.subtitle h3 {
+  font-size: 30px;
+  margin-bottom: 2em;
+}
+
+.container2 {
+  text-align: center;
+  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  border: 1 px solid #f2f6ff;
+  border: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.title2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 5px;
+  font-size: 75px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.subtitle2 {
+  font-size: 30px;
+  margin-bottom: 2em;
+  font-size: 1.5em;
+}
+
+.container2 div {
+  margin: 60px 5% 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #0074d9; */
+}
+
+.container2 p {
+  margin-top: 0;
+  width: 55%;
+  word-spacing: 5px;
+  font-size: 40px;
+  line-height: 1.4;
+  text-align: justify;
+  height: 100%;
+  /* background-color: #000; */
+}
+
+.container2 img {
+  width: 40%;
+}
+
+.container3 {
+  text-align: center;
+  padding: 20px;
+  border: 1 px solid #f2f6ff;
+  border: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.container3 h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 5px;
+  font-size: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.container3 p {
+  margin-top: 75px;
+  margin-left: 30px;
+  width: 55%;
+  word-spacing: 5px;
+  font-size: 35px;
+  line-height: 1.4;
+  text-align: justify;
+  height: 100%;
+  display: flex;
+  /* background-color: #000; */
+}
+
+.container3 img {
+  width: 40%;
+  float: left;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-left: 20px;
+}
+
+.container4 {
+  text-align: center;
+  padding: 20px;
+  border: 1 px solid #f2f6ff;
+  border: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* .container1 p{
+  
+  } */
+
+.search input[type="text"] {
+  width: 300px;
+  height: 25px;
+  border-radius: 25px;
+  border: none;
+}
+
+.search {
+  float: center;
+  margin: 7px;
+}
+
+.search button {
+  background-color: #0074d9;
+  color: #f2f2f2;
+  float: center;
+  padding: 5px 10px;
+  margin-right: 16px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.centered {
+  width: 42%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f2f2f2;
+  /* background: rgba(255, 255, 255, 0.7); Latar belakang semi-transparan */
+  padding: 10px;
+  z-index: 6;
+  font: optional;
+}
+
+.centered .title {
+  font-size: 125px;
+  margin: 0;
+  width: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.centered .subtitle {
+  margin-top: 0;
+  line-height: 24px;
+  /* background: #000; */
+  word-spacing: 0.09em;
+}
+
+.gelap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0000007c;
+}
