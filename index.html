@@ -7,23 +7,59 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <title>GO!Semarang</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li><a href="ourteam.html">Our Team</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="Assets/go_smg-removebg-preview.png"
+              class="logo putih"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destination">Destinations</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#ourteam">Our Team</a></li>
+          </ul>
+        </div>
+        <div class="login-signup">
+          <a href="../FE-Bandung-2-main/html/login.html" class="login-btn"
+            >Login</a
+          >
+          <a href="../FE-Bandung-2-main/html/signup.html" class="signup-btn"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
-      <div class="container1">
+      <div class="container1" id="home">
         <div class="centered">
           <h1 class="title">SEMARANG</h1>
           <h3 class="subtitle">
@@ -116,7 +152,7 @@
                     </div>
                 </div> -->
       </div>
-      <div class="container2">
+      <div class="container2" id="about">
         <h1 class="title2">WELCOME TO SEMARANG</h1>
         <h2 class="subtitle2">
           Known as the capital city of Central Java Province, it has a long
@@ -136,57 +172,254 @@
           <img src="Assets/2.jpg" alt="" />
         </div>
       </div>
-      <div class="container3">
+      <div class="container3" id="history">
         <div>
           <h1>History of Semarang</h1>
-          <img src="Assets/kotalamarevamp.webp" alt="" />
-          <p>
-            In the 15th century, Chinese emperors emissary Zheng He, otherwise
-            known as Admiral Cheng Ho, set foot on Java. From the 17th century
-            onwards, Semarang became an entrepot for spices, also a busy harbor
-            for trade and passengers when travel was made predominantly by sea.
-            The city of Semarang, capital of the province of Central Java, sits
-            precisely in the center of the northern seaboard of the fertile and
-            densely populated island of Java.
-          </p>
-          <p>
-            This strategic position of Semarang has made the city a melting pot
-            of Chinese, Indian Arab, and European cultures. In the older part of
-            the city near the harbor named Kota Lama, or the Oudstadt, stroll
-            around to explore the historic old buildings in what was once the
-            European commercial district.
-          </p>
-        </div>
-      </div>
-      <div class="container4">
-        <div>
-          <h1>Popular Destination</h1>
-          <div class="search">
-            <form action="#">
-              <input
-                type="text"
-                placeholder="What are you searching for?"
-                name="search"
-              />
-              <button>
-                <i class="fa fa-search" style="font-size: 18px"> </i>
-              </button>
-            </form>
-          </div>
-          <div class="destination">
-            <div class="top-left">
-              <img src="Assets/1.jpg" alt="" />
-              <p>Lawang Sewu</p>
-              <p>Semarang</p>
+          <div class="title3">
+            <img src="Assets/kotalamarevamp.webp" alt="" />
+            <div class="paragraph3">
+              <p>
+                In the 15th century, Chinese emperors emissary Zheng He,
+                otherwise known as Admiral Cheng Ho, set foot on Java. From the
+                17th century onwards, Semarang became an entrepot for spices,
+                also a busy harbor for trade and passengers when travel was made
+                predominantly by sea. The city of Semarang, capital of the
+                province of Central Java, sits precisely in the center of the
+                northern seaboard of the fertile and densely populated island of
+                Java.
+                <br />
+                <br />
+                This strategic position of Semarang has made the city a melting
+                pot of Chinese, Indian Arab, and European cultures. In the older
+                part of the city near the harbor named Kota Lama, or the
+                Oudstadt, stroll around to explore the historic old buildings in
+                what was once the European commercial district.
+              </p>
             </div>
-            <div class="top-right">Top Right</div>
-            <div class="content">Content</div>
-            <div class="bottom-left">Bottom Left</div>
-            <div class="bottom-center">Bottom Center</div>
-            <div class="bottom-right">Bottom Right</div>
           </div>
         </div>
       </div>
+      <div class="container4" id="destination">
+        <h1 class="destination">Popular Destination</h1>
+        <div class="search">
+          <input
+            type="text"
+            id="search-box"
+            placeholder="What are you searching for?"
+          />
+          <button id="search-button">
+            <i class="fas fa-search"></i>
+            <!-- Ikon pencarian dari Font Awesome -->
+          </button>
+        </div>
+        <br /><br /><br />
+
+        <div class="box-container">
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi1.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Lawang Sewu</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi2.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Kuil Sam Poo Kong</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi3.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Candi Gedong Songo</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi4.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Taman Bunga Celosia</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi5.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Curug Lawe Benowo</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi6.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Dusun Semilir</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi7.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Kopeng Treetop Adventure</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="image">
+              <img src="Assets/destinasi8.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>Museum Ambarawa</h3>
+              <p>Semarang</p>
+              <a href="#">Read More<i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container5" id="aboutus">
+        <div class="title5">
+          <img src="Assets/Kota Lama Semarang.jpg" alt="" />
+          <div class="about-text">
+            <h1>Explore the entire city of Semarang with us</h1>
+            <p>
+              Go! Semarang is a travel agency in the city of Semarang that aims
+              to facilitate local and international tourists who will travel
+              around the city of Semarang.
+              <br />
+              <br />
+              We are an employee-owned company with a passion for providing
+              exemplary customer service, leveraging our expertise and
+              technology to deliver innovative travel solutions in a gratifying
+              work environment
+            </p>
+
+            <button class="button">Contact Us</button>
+          </div>
+        </div>
+      </div>
+      <div class="container6" id="ourteam">
+        <div class="title6">
+          <h1>Our Great Team</h1>
+          <div class="team">
+            <div>
+              <img src="Assets/tesar.jpg" alt="" />
+              <h6>Tesar Nurrizky</h6>
+              <span>Project Leader</span>
+            </div>
+            <div>
+              <img src="Assets/fikri.jpg" alt="" />
+              <h6>Muhammad Fikri Abdillah Syaeba</h6>
+              <span>Front-End Developer</span>
+            </div>
+            <div>
+              <img src="Assets/salsa.jpg" alt="" />
+              <h6>Maria Ulfa Salsabilla</h6>
+              <span>Front-End Developer</span>
+            </div>
+            <div class="second-row">
+              <img src="Assets/aura.jpg" alt="" />
+              <h6>Aura Isni Qurrota'ayun</h6>
+              <span>Back-End Developer</span>
+            </div>
+            <div class="second-row">
+              <img src="Assets/nabillah.jpg" alt="" />
+              <h6>Nabillah Santi Dewi Lestari</h6>
+              <span>Back-End Developer</span>
+            </div>
+            <div class="second-row">
+              <img src="Assets/nurul.jpg" alt="" />
+              <h6>Nurul Gunawan</h6>
+              <span>Quality Assurance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container7">
+        <div class="title7">
+          <h2>
+            Don't Miss The 50% Discount if <br />
+            register Today
+          </h2>
+        </div>
+        <div class="register">
+          <button class="button7">Register Now</button>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container8">
+          <div class="row">
+            <div class="footer-left">
+              <a href="index.html">
+                <img src="Assets/go_smg-removebg-preview.png" alt="" />
+              </a>
+            </div>
+            <div class="footer-col">
+              <h4>Menu</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#destination">Destination</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="#ourteam">Our Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Contact Us</h4>
+              <ul>
+                <li>
+                  <a href="#"> <i class="fas fa-phone"></i> 021-9876-2345</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-envelope"></i> gosemarang@gmail.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Follow Us On</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="rights">
+              <p>© 2023 GO!Semarang - All rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
