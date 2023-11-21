@@ -13,7 +13,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Initial background color */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+nav.scrolled {
+  background-color: #053b50;
 }
 
 nav .layar-dalam {
@@ -62,24 +67,33 @@ nav .tombol-menu {
 }
 
 /* Style the Login and Sign Up buttons */
-nav .login-signup a.login-btn,
-nav .login-signup a.signup-btn {
+nav .login-signup a.login-btn {
   margin-left: 15px;
   padding: 8px 15px;
-  border: 2px solid #fff;
+  background: #fff;
   border-radius: 5px;
   text-decoration: none;
   color: #3498db;
 }
+nav .login-signup a.signup-btn {
+  margin-left: 15px;
+  padding: 8px 15px;
+  background: #3498db;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+}
 
 nav .login-signup a.login-btn:hover {
-  background-color: #fff;
-  color: #3498db;
+  scale: 1.2;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 nav .login-signup a.signup-btn:hover {
-  background-color: #3498db;
-  color: #fff;
+  scale: 1.2;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 /* Responsive styles for smaller screens */
@@ -423,12 +437,18 @@ nav .login-signup a.signup-btn:hover {
   line-height: 2;
 }
 
-.content a {
+.content button {
   font-size: 0.9em;
   cursor: pointer;
   text-decoration: none;
+  background: none;
+  border: none;
+  color: #3498db;
 }
 
+.button p3:hover {
+  color: #003380;
+}
 .content .i .fas {
   padding-right: 1em;
 }
@@ -531,12 +551,14 @@ nav .login-signup a.signup-btn:hover {
   display: inline-block;
   padding: 13px;
   border-radius: 13px;
-  background-color: #0074d9;
+  background-color: #3498db;
   color: white;
   font-size: 15px;
   font-weight: 350;
   transition: all 0.5s ease;
   cursor: pointer;
+  text-decoration: none;
+  border-color: #3498db;
 }
 
 .container6 {
@@ -633,121 +655,183 @@ nav .login-signup a.signup-btn:hover {
   box-sizing: border-box;
 }
 
-.container8 {
-  max-width: 1170px;
-  /* background-color: red; */
-  margin: auto;
+.popup {
+  display: none; /* Mengubah display menjadi none */
+  align-items: center;
+  border-radius: 25px; /* Menambahkan lengkungan pada border */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1178px; /* Sesuaikan dengan lebar yang diinginkan */
+  height: 530px; /* Sesuaikan dengan tinggi yang diinginkan */
+  border: 0px;
+  padding: 0px;
+  background: #fff;
+  z-index: 1;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  /* background-color: orange; */
-}
-
-ul {
-  list-style: none;
-}
-
-.footer {
-  background-color: #0074d9;
-  padding: 40px 0;
-}
-
-.footer-col {
-  /* width: 25%; */
-  margin-right: 4em;
-  padding: 0 25px;
-  /* background-color: red; */
-}
-
-.footer-col h4 {
-  font-size: 18px;
-  color: white;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  line-height: 1.5;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  position: relative;
-}
-
-.footer-col h4::before {
-  content: "";
+.popup .close {
   position: absolute;
-  left: 0;
-  bottom: -10px;
-  background-color: #f2f2f2;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
+  top: 10px;
+  right: 30px;
+  cursor: pointer;
 }
 
-.footer-col ul li:not(:last-child) {
-  margin-bottom: 10px;
+/* Style untuk konten di dalam pop-up */
+.popup-content {
+  display: flex;
 }
 
-.footer-col ul li a {
-  font-size: 16px;
-  text-transform: capitalize;
-  color: white;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  display: block;
-  transition: all 0.3s ease;
+.popup-img {
+  width: 595px; /* Sesuaikan dengan lebar yang diinginkan */
+  height: 555px; /* Sesuaikan dengan tinggi yang diinginkan */
+  border-top-left-radius: 25px; /* Radius border di sebelah kiri atas gambar */
+  border-bottom-left-radius: 25px; /* Radius border di sebelah kiri bawah gambar */
 }
 
-.footer-col ul li a:hover {
-  color: white;
-  padding-left: 8px;
+.popup-text {
+  width: 60%;
+  /*padding-left: 20px; */
+  margin-left: 40px;
+  margin-right: 70px;
+  text-align: left; /* Menentukan teks berada di sebelah kiri */
 }
 
-.footer-col .social-links a {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: white;
-  transition: all 0.5s ease;
+.popup-text h2 {
+  margin-top: 100px;
+  margin-bottom: 5px; /* Menambahkan jarak antara judul dan teks Semarang */
 }
 
-.footer-col .social-links a:hover {
-  color: #f2f6ff;
-  background-color: aqua;
+.popup-paragraph {
+  font-size: 14px;
+  margin-left: 10px; /* Adjust margin as needed */
 }
 
-.footer-left img {
-  width: 100%;
-  vertical-align: middle;
-  margin-top: 65px;
-  /* background-color: #4CAF50; */
-}
-.footer-left div {
-  margin-right: 25px;
-}
+.location-icon {
+  color: red; /* or any other color you prefer */
+  font-size: 17px;
+  margin-left: -10px; /* Adjust margin as needed */
 
-.footer-left {
-  margin-right: 4em;
-  /* background-color: red; */
-}
+  .container8 {
+    max-width: 1170px;
+    /* background-color: red; */
+    margin: auto;
+  }
 
-.rights {
-  margin-top: 10px;
-  color: white !important;
-}
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: orange; */
+  }
 
-.rights p {
-  margin: 0;
-  font-size: 15px;
-  text-align: center;
-}
-/* responsive */
-/* @media(max-width: 767px){
+  ul {
+    list-style: none;
+  }
+
+  .footer {
+    background-color: #0074d9;
+    padding: 40px 0 0;
+    color: white;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-col {
+    margin-right: 4em;
+    padding: 0 25px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #f2f2f2;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: white;
+    padding-left: 2px;
+  }
+
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease;
+  }
+
+  .footer-col .social-links a:hover {
+    color: #f2f6ff;
+    background-color: aqua;
+  }
+
+  .footer-left img {
+    width: 100%;
+    vertical-align: middle;
+    margin-top: 65px;
+    /* background-color: #4CAF50; */
+  }
+  .footer-left div {
+    margin-right: 25px;
+  }
+
+  .footer-left {
+    margin-right: 4em;
+    /* background-color: red; */
+  }
+
+  .rights {
+    margin-top: 10px;
+    color: white !important;
+  }
+
+  .rights p {
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+  }
+  /* responsive */
+  /* @media(max-width: 767px){
   .footer-col {
     width: 50%;
     margin-bottom: 30px;
@@ -759,3 +843,4 @@ ul {
     width: 100%;
   }
 } */
+}
