@@ -48,10 +48,10 @@
           </ul>
         </div>
         <div class="login-signup">
-          <a href="../FE-Bandung-2-main/html/login.html" class="login-btn"
+          <a href="../FE-2-Bandung-2/html/login.html" class="login-btn"
             >Login</a
           >
-          <a href="../FE-Bandung-2-main/html/signup.html" class="signup-btn"
+          <a href="../FE-2-Bandung-2/html/signup.html" class="signup-btn"
             >Sign Up</a
           >
         </div>
@@ -122,22 +122,6 @@
           </div>
           <!-- image slider end -->
         </div>
-
-        <script type="text/javascript">
-          function changeSlide(slideNumber) {
-            document.getElementById("radio" + slideNumber).checked = true;
-          }
-
-          var counter = 1;
-          setInterval(function () {
-            document.getElementById("radio" + counter).checked = true;
-            counter++;
-            if (counter > 4) {
-              counter = 1;
-            }
-          }, 5000); // Pergantian slide setiap 5 detik
-        </script>
-
         <!-- <div class="carousel">
                     <div class="carousel-slide">
                         <img src="1.jpg" alt="Image 1">
@@ -510,7 +494,7 @@
               work environment
             </p>
 
-            <button class="button">Contact Us</button>
+            <a href="#contactus"><button class="button">Contact Us</button></a>
           </div>
         </div>
       </div>
@@ -559,7 +543,34 @@
           </h2>
         </div>
         <div class="register">
-          <button class="button7">Register Now</button>
+          <a href="../FE-2-Bandung-2/html/signup.html"
+            ><button class="button7">Register Now</button></a
+          >
+        </div>
+      </div>
+      <div class="contact-form" id="contactus">
+        <h1><b>Contact Us</b></h1>
+        <div class="container9">
+          <div class="main">
+            <div class="content">
+              <h2>Contact Us</h2>
+              <form action="#" method="post">
+                <input type="text" name="name" placeholder="Enter Your Name" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Your Email"
+                />
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">
+                  Send <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+            <div class="form-img">
+              <img src="../FE-2-Bandung-2/Assets/museum_ambarawa.png" alt="" />
+            </div>
+          </div>
         </div>
       </div>
       <footer class="footer">
