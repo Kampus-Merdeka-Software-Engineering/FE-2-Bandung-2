@@ -14,6 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function changeSlide(slideNumber) {
+  document.getElementById("radio" + slideNumber).checked = true;
+}
+
+var counter = 1;
+setInterval(function () {
+  document.getElementById("radio" + counter).checked = true;
+  counter++;
+  if (counter > 4) {
+    counter = 1;
+  }
+}, 5000); // Pergantian slide setiap 5 detik
+
 /* login.html dan login.css */
 const container = document.getElementById("container");
 const registerBtn = document.getElementById("register");

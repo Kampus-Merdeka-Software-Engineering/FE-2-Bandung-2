@@ -20,6 +20,9 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
     <title>GO!Semarang</title>
   </head>
   <body>
@@ -28,7 +31,7 @@
         <div class="logo">
           <a href="index.html">
             <img
-              src="Assets/go_smg-removebg-preview.png"
+              src="Assets/go-smg.png"
               class="logo putih"
               alt="Logo"
             />
@@ -204,6 +207,7 @@
               <img src="Assets/lawang_sewu.png" alt="" />
             </div>
             <div class="content">
+              <section 
               <h3>Lawang Sewu</h3>
               <p>Semarang</p>
               <button onclick="openPopup('pop-lawang')">
@@ -224,12 +228,16 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl MT.
                   Haryono, Bubakan
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 09:00 - 15:00
+                </p>
                 <p>
                   Lawang Sewu is an office building located opposite Tugu Muda,
                   Semarang City, Central Java, Indonesia, which was built as the
                   headquarters of the Nederlandsch-Indische Spoorweg
                   Maatschappij.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -257,6 +265,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl.
                   Simongan No.129, Bongsari
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 08:00 - 20:00
+                </p>
                 <p>
                   Sam Poo Kong Temple is a historical temple that was built as a
                   place of worship for the followers of the Confucian religion
@@ -264,6 +275,7 @@
                   Temple is located near Tugu Muda, which serves as an important
                   landmark in the history of Semarang.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -291,6 +303,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl. Ke
                   Candi Gedong Songo, Candi, Krajan
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 09:00 - 17:00
+                </p>
                 <p>
                   Gedong Songo Temple is a temple complex located in the
                   highlands on the slopes of Mount Ungaran, Central Java,
@@ -298,6 +313,7 @@
                   temple complex consists of nine temples scattered around the
                   mountainous area.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -325,12 +341,16 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl. Wisata
                   Candi Gedong Songo Km 0,5, Bandungan
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 08:00 - 17:00 
+                </p>
                 <p>
                   Celosia Flower Park is a flower garden filled with the beauty
                   of celosia flowers that bloom all year round and offers a
                   mesmerising experience for visitors looking for natural
                   tranquillity in the middle of the city.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -358,6 +378,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Desa
                   Kalisidi, Ungaran Barat
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 08:00 - 16:00
+                </p>
                 <p>
                   Curug Lawe Benowo is a waterfall known for its natural beauty.
                   Surrounded by tropical forest, the waterfall offers an
@@ -365,6 +388,7 @@
                   water and the sound of its gurgling create a calming
                   atmosphere.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -392,6 +416,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl.
                   Soekarno Hatta No.49, Ngemple
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 09:00 - 18:00
+                </p>
                 <p>
                   Dusun Semilir is a village located near Tugu Muda, Semarang
                   City, Central Java, Indonesia. It was originally the place
@@ -400,6 +427,7 @@
                   office building known as "Dusun Semilir" in the early 20th
                   century.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -429,6 +457,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl. Raya
                   Kopeng, Getasan
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 09:00 - 17:00
+                </p>
                 <p>
                   Kopeng Treetop Adventure is an adventure park located in
                   Kopeng, Central Java, Indonesia. The park is located in the
@@ -436,6 +467,7 @@
                   such as treetop walking, flying fox, and various other
                   challenges at high altitude.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -455,8 +487,7 @@
 
           <div class="popup" id="pop-museum">
             <span class="close" onclick="closePopup('pop-museum')"
-              >&times;</span
-            >
+              >&times;</span>
             <div class="popup-content">
               <img src="Assets/museum_ambarawa.png" alt="" class="popup-img" />
               <div class="popup-text">
@@ -465,6 +496,9 @@
                   <i class="fas fa-map-marker-alt location-icon"></i> Jl.
                   Stasiun No.1, Ambarawa
                 </p>
+                <p class="popup-time">
+                  <i class="far fa-clock time-icon"></i> 08:00 - 17:00
+                </p>
                 <p>
                   Museum Ambarawa is a building that was originally used as a
                   railway depot by the Nederlandsch-Indische Spoorweg
@@ -472,6 +506,7 @@
                   that displays a collection of trains, railway equipment, and
                   the history of railways in Indonesia.
                 </p>
+                <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
             </div>
           </div>
@@ -479,7 +514,7 @@
       </div>
       <div class="container5" id="aboutus">
         <div class="title5">
-          <img src="Assets/Kota_Lama_Semarang.jpg" alt="" />
+          <img src="Assets/Kota Lama Semarang.jpg" alt="" />
           <div class="about-text">
             <h1>Explore the entire city of Semarang with us</h1>
             <p>
@@ -550,9 +585,9 @@
       </div>
       <div class="contact-form" id="contactus">
         <h1><b>Contact Us</b></h1>
-        <div class="container9">
+        <div class="container8">
           <div class="main">
-            <div class="content">
+            <div class="content2">
               <h2>Contact Us</h2>
               <form action="#" method="post">
                 <input type="text" name="name" placeholder="Enter Your Name" />
@@ -568,17 +603,17 @@
               </form>
             </div>
             <div class="form-img">
-              <img src="../FE-2-Bandung-2/Assets/museum_ambarawa.png" alt="" />
+              <img src="Assets/museum_ambarawa.png" alt="" />
             </div>
           </div>
         </div>
       </div>
       <footer class="footer">
-        <div class="container8">
+        <div class="container9">
           <div class="row">
             <div class="footer-left">
               <a href="index.html">
-                <img src="Assets/go_smg-removebg-preview.png" alt="" />
+                <img src="Assets/go-smg.png" alt="" />
               </a>
             </div>
             <div class="footer-col">

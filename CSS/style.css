@@ -123,6 +123,42 @@ nav .login-signup a.signup-btn:hover {
     display: block;
     cursor: pointer;
   }
+
+  nav .layar-dalam {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .menu {
+    margin-top: 10px;
+  }
+
+  nav .tombol-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Add new styles for the hamburger icon */
+  nav .tombol-menu .garis {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  nav .menu.active .garis:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  nav .menu.active .garis:nth-child(2) {
+    opacity: 0;
+  }
+
+  nav .menu.active .garis:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 .slider {
@@ -449,13 +485,14 @@ nav .login-signup a.signup-btn:hover {
 .button p3:hover {
   color: #003380;
 }
-.content .i .fas {
-  padding-right: 1em;
-}
 
-.fas:hover {
+/* .content .i .fas {
+  padding-right: 1em;
+} */
+
+/* .fas:hover {
   padding-left: 0.5em;
-}
+} */
 
 .centered {
   width: 60%;
@@ -667,7 +704,7 @@ nav .login-signup a.signup-btn:hover {
 
 .popup .close {
   position: absolute;
-  top: 10px;
+  top: 25px;
   right: 30px;
   cursor: pointer;
 }
@@ -694,19 +731,56 @@ nav .login-signup a.signup-btn:hover {
 
 .popup-text h2 {
   margin-top: 100px;
-  margin-bottom: 5px; /* Menambahkan jarak antara judul dan teks Semarang */
+  margin-bottom: 20px; 
 }
 
 .popup-paragraph {
-  font-size: 14px;
-  margin-left: 10px; /* Adjust margin as needed */
+  display: flexbox;
+  font-size: 12px;
+  margin-left: 12px; /*Adjust margin as needed*/
+  margin-bottom: 5px; /* Menambahkan jarak dua baris */
+  color: #808080; /* Warna abu-abu muda untuk teks alamat */
+  position: relative;
+}
+
+.popup-time {
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #808080; /* Warna abu-abu muda untuk teks waktu */
+}
+
+.time-icon {
+  margin-right: 5px;
+  color: red; /* Tambahkan warna merah untuk ikon waktu */
+  font-size: 12px;
 }
 
 .location-icon {
+  /* position: absolute; */
   color: red; /* or any other color you prefer */
-  font-size: 17px;
+  font-size: 12px;
   margin-left: -10px;
+  margin-right: 5px;
   /* Adjust margin as needed */
+}
+
+.popup-text button {
+  background-color: #3498db; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks tombol */
+  font-size: 14px; /* Ukuran font */
+  padding: 10px 20px; /* Padding tombol */
+  border: none; /* Tanpa border */
+  border-radius: 5px; /* Border radius */
+  cursor: pointer;
+}
+
+ .btn-fav {
+   margin-top: 120px;
+ }
+
+.popup-text button:hover {
+  background-color: #00538a; /* Warna latar belakang tombol saat dihover */
+  color: #fff;
 }
 
 * {
@@ -728,7 +802,7 @@ nav .login-signup a.signup-btn:hover {
   align-items: center;
 }
 
-.container9 {
+.container8 {
   max-width: 800px;
   margin-top: 0 auto;
 }
@@ -756,7 +830,7 @@ nav .login-signup a.signup-btn:hover {
   margin: 30px 0;
 }
 
-.content {
+.content2 {
   flex-basis: 50%;
   padding: 3em 3em;
   background: #fff;
@@ -841,7 +915,7 @@ textarea {
     margin: 15px 0;
   }
 
-  .content,
+  .content2,
   .form-img {
     flex-basis: 100%;
     border-radius: 8px;
@@ -852,12 +926,12 @@ textarea {
     margin-top: 15px;
   }
 
-  .content {
+  .content2 {
     margin-bottom: 15px;
   }
 }
 
-.container8 {
+.container9 {
   max-width: 1170px;
   /* background-color: red; */
   margin: auto;
