@@ -201,19 +201,6 @@
         <br /><br /><br />
 
         <div class="box-container">
-          <div class="box">
-            <div class="image">
-              <img src="Assets/lawang_sewu.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Lawang Sewu</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-lawang')">
-                <p3>Read More > </p3>
-              </button>
-            </div>
-          </div>
-
           <div class="popup" id="pop-lawang">
             <span class="close" onclick="closePopup('pop-lawang')"
               >&times;</span
@@ -237,19 +224,6 @@
                 </p>
                 <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="image">
-              <img src="Assets/kuil_sam.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Kuil Sam Poo Kong</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-kuil')">
-                <p3>Read More > </p3>
-              </button>
             </div>
           </div>
 
@@ -278,19 +252,6 @@
             </div>
           </div>
 
-          <div class="box">
-            <div class="image">
-              <img src="Assets/candi_gedong.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Candi Gedong Songo</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-candi')">
-                <p3>Read More > </p3>
-              </button>
-            </div>
-          </div>
-
           <div class="popup" id="pop-candi">
             <span class="close" onclick="closePopup('pop-candi')">&times;</span>
             <div class="popup-content">
@@ -313,19 +274,6 @@
                 </p>
                 <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="image">
-              <img src="Assets/taman_celosia.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Taman Bunga Celosia</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-taman')">
-                <p3>Read More > </p3>
-              </button>
             </div>
           </div>
 
@@ -353,19 +301,6 @@
             </div>
           </div>
 
-          <div class="box">
-            <div class="image">
-              <img src="Assets/curug_lawe.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Curug Lawe Benowo</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-curug')">
-                <p3>Read More > </p3>
-              </button>
-            </div>
-          </div>
-
           <div class="popup" id="pop-curug">
             <span class="close" onclick="closePopup('pop-curug')">&times;</span>
             <div class="popup-content">
@@ -388,19 +323,6 @@
                 </p>
                 <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="image">
-              <img src="Assets/dusun_semilir.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Dusun Semilir</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-dusun')">
-                <p3>Read More > </p3>
-              </button>
             </div>
           </div>
 
@@ -430,19 +352,6 @@
             </div>
           </div>
 
-          <div class="box">
-            <div class="image">
-              <img src="Assets/kopeng.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Kopeng Treetop Adventure</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-kopeng')">
-                <p3>Read More > </p3>
-              </button>
-            </div>
-          </div>
-
           <div class="popup" id="pop-kopeng">
             <span class="close" onclick="closePopup('pop-kopeng')"
               >&times;</span
@@ -467,19 +376,6 @@
                 </p>
                 <button class="btn-fav" onclick="addToFavorites()">+ Favorite</button>
               </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="image">
-              <img src="Assets/museum_ambarawa.png" alt="" />
-            </div>
-            <div class="content">
-              <h3>Museum Ambarawa</h3>
-              <p>Semarang</p>
-              <button onclick="openPopup('pop-museum')">
-                <p3>Read More > </p3>
-              </button>
             </div>
           </div>
 
@@ -587,14 +483,15 @@
           <div class="main">
             <div class="content2">
               <h2>Contact Us</h2>
-              <form action="#" method="post">
-                <input type="text" name="name" placeholder="Enter Your Name" />
+              <form action="#" class="form-field">
+                <input class="name-field" type="text" name="name" placeholder="Enter Your Name" />
                 <input
+                  class="email-field"
                   type="email"
                   name="email"
                   placeholder="Enter Your Email"
                 />
-                <textarea name="message" placeholder="Your Message"></textarea>
+                <textare class="message-field"a name="message" placeholder="Your Message"></textare>
                 <button type="submit" class="btn">
                   Send <i class="fas fa-paper-plane"></i>
                 </button>
