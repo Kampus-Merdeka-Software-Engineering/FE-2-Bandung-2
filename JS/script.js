@@ -1,4 +1,3 @@
-// Navbar session //
 document.addEventListener("DOMContentLoaded", function () {
   var nav = document.querySelector("nav");
 
@@ -14,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-// End Navbar Session //
 
-//Slide Session //
 function changeSlide(slideNumber) {
   document.getElementById("radio" + slideNumber).checked = true;
 }
@@ -29,7 +26,6 @@ setInterval(function () {
     counter = 1;
   }
 }, 5000); // Pergantian slide setiap 5 detik
-// End Slide Session //
 
 /* login.html dan login.css */
 const container = document.getElementById("container");
@@ -42,9 +38,7 @@ registerBtn.addEventListener("click", () => {
 loginBtn.addEventListener("click", () => {
   container.classList.remove("active");
 });
-// End Login //
 
-// Popup Session //
 function openPopup(popupId) {
   document.getElementById(popupId).style.display = "block";
 }
@@ -52,4 +46,3 @@ function openPopup(popupId) {
 function closePopup(popupId) {
   document.getElementById(popupId).style.display = "none";
 }
-// End Popup Session //

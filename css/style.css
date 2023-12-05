@@ -1,9 +1,14 @@
+html {
+  scroll-behavior: smooth;;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f2f6ff;
+  /* display: flex; */
 }
 
 nav {
@@ -232,12 +237,12 @@ nav .login-signup a.signup-btn:hover {
   margin-left: -60%;
 }
 
-.container {
+/* .container {
   display: grid;
   grid-template-columns: 1fr;
   /* grid-gap: 10px; */
-  background-color: #f2f6ff;
-}
+  /* background-color: #f2f6ff; */
+/* } */ 
 
 .container1 {
   text-align: center;
