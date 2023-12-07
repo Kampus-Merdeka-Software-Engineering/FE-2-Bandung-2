@@ -43,10 +43,12 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center; /* Pusatkan elemen ul */
+  align-items: center; /* Pusatkan elemen ul */
 }
 
 nav ul li {
-  margin-right: 20px;
+  margin: 0 10px; /* Jarak antar elemen li */
 }
 
 nav ul li a {
@@ -62,7 +64,6 @@ nav ul li a:hover {
 
 nav .menu,
 nav .login-signup {
-  margin-left: auto;
   display: flex;
   align-items: center;
 }
@@ -71,34 +72,141 @@ nav .tombol-menu {
   display: none;
 }
 
-/* Style the Login and Sign Up buttons */
-nav .login-signup a.login-btn {
-  margin-left: 15px;
-  padding: 8px 15px;
-  background: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #3498db;
-}
-nav .login-signup a.signup-btn {
-  margin-left: 15px;
-  padding: 8px 15px;
-  background: #3498db;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #fff;
+/* Pop up user */
+
+.icon-user {
+  position: relative;
+  display: inline-block;
 }
 
-nav .login-signup a.login-btn:hover {
-  scale: 1.2;
-  transition: 0.2s;
+.icon-user i {
   cursor: pointer;
 }
 
-nav .login-signup a.signup-btn:hover {
-  scale: 1.2;
-  transition: 0.2s;
+.pop-up-user {
+  /* display: none; */
+  position: absolute;
+  top: 50px; /* Sesuaikan dengan posisi yang diinginkan */
+  right: 0;
+  width: 190px; /* Sesuaikan lebar popup dengan 210px */
+  height: 100px; /* Sesuaikan tinggi popup dengan 100px */
+  background-color: rgba(255, 255, 255, 0.4); /* Warna latar belakang dengan alpha untuk efek bening */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px; /* Mengurangi padding agar sesuai dengan tinggi yang diinginkan */
+  z-index: 1; /* Pastikan popup tampil di atas elemen lainnya */
+  backdrop-filter: blur(5px); /* Efek blur */
+}
+
+.pop-up-user ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pop-up-user li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pop-up-user li:last-child {
+  border-bottom: none;
+}
+
+.pop-up-user-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.favorite-container,
+.logout-container {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.favorite-container i {
+  margin-right: 5px;
+}
+
+/* Menambahkan CSS untuk mengubah urutan elemen */
+.favorite-container {
+  order: 1; /* Menempatkan elemen favorite di atas elemen logout */
+}
+
+.logout-container {
+  order: 2; /* Menempatkan elemen logout di bawah elemen favorite */
+}
+
+.love-icon-popup {
+  vertical-align: middle; /* Membuat ikon dan teks sejajar vertikal */
+  color: black; /* Membuat warna ikon transparan */
+}
+
+.logout-icon-popup {
+  vertical-align: middle; /* Membuat ikon dan teks sejajar vertikal */
+  color: black; /* Membuat warna ikon transparan */
+}
+
+
+/* Style untuk ikon user */
+.far.fa-user-circle {
+  color: #fff; /* Warna ikon */
+  margin-left: auto;
+}
+
+/* Additional styles for the new popup */
+.popup-favorite {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 1178px; /* Set the width */
+  height: 555px; /* Set the height */
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 25px;
+}
+
+.popup-favorite .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
   cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+
+.favorites-title,
+.favorites-subtitle,
+.go-to-text { 
+  font-family: 'Poppins', sans-serif; /* Specify the Poppins font */
+}
+
+.favorites-title {
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 10px;
+  padding-left: 96px;
+  padding-top: 70px;
+}
+
+.favorites-subtitle {
+  font-size: 16px;
+  padding-left: 96px;
+}
+
+.go-to-text {
+  text-align: right;
+  font-size: 16px;
+  margin-top: 0; /* Adjust the margin-top based on your preference */
+  padding-top: 120px;
+  padding-left: 542px;
+  cursor: pointer; /* Add cursor pointer for indicating it's clickable */
+  text-decoration: underline; /* Add underline for the text */
 }
 
 /* Responsive styles for smaller screens */
@@ -240,10 +348,7 @@ nav .login-signup a.signup-btn:hover {
 .container1 {
   text-align: center;
   /* padding: 20px; */
-  /* border: 1 px solid #f2f6ff; */
-  /* border: 5px; */
   width: auto;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -260,9 +365,7 @@ nav .login-signup a.signup-btn:hover {
   padding: 20px;
   padding-top: 60px;
   padding-bottom: 80px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
 }
 
@@ -383,6 +486,38 @@ nav .login-signup a.signup-btn:hover {
   font-size: 16px;
 }
 
+/* @mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+} */
+
+/* .destination .box-container{
+  @include grid(27rem);
+
+  .box{
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &:hover img{
+      transform: scale(1.1);
+    }
+
+    .image{
+      height: 20rem;
+      overflow: hidden;
+      width: 100%;
+
+
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+} */
+
 .search {
   text-align: center;
   margin-top: 20px;
@@ -452,6 +587,14 @@ nav .login-signup a.signup-btn:hover {
   color: #003380;
 }
 
+/* .content .i .fas {
+  padding-right: 1em;
+} */
+
+/* .fas:hover {
+  padding-left: 0.5em;
+} */
+
 .centered {
   width: 60%;
   position: absolute;
@@ -459,7 +602,6 @@ nav .login-signup a.signup-btn:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f2f2f2;
-  /* background: rgba(255, 255, 255, 0.7); Latar belakang semi-transparan */
   padding: 10px;
   z-index: 6;
   font: optional;
@@ -467,10 +609,10 @@ nav .login-signup a.signup-btn:hover {
 }
 
 .centered .title {
-  font-size: 125px;
+  font-size: 110px;
   margin: 0;
   width: 100%;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Shojumaru'
   /* background-color: black; */
 }
 
@@ -723,13 +865,14 @@ nav .login-signup a.signup-btn:hover {
 }
 
 .popup-text button {
-  background-color: #3498db; /* Warna latar belakang tombol */
-  color: #fff; /* Warna teks tombol */
-  font-size: 14px; /* Ukuran font */
-  padding: 10px 20px; /* Padding tombol */
-  border: none; /* Tanpa border */
-  border-radius: 5px; /* Border radius */
+  background-color: #fff;
+  color: #3498db;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid #3498db;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
  .btn-fav {
@@ -737,8 +880,18 @@ nav .login-signup a.signup-btn:hover {
  }
 
 .popup-text button:hover {
-  background-color: #00538a; /* Warna latar belakang tombol saat dihover */
+  background-color: #3498db;
   color: #fff;
+  border-color: #fff; /* Change border color on hover */
+}
+.btn-fav.favorite {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff;
+}
+
+.btn-fav.favorite:hover {
+  background-color: #3498db;
 }
 
 * {

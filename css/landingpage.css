@@ -240,10 +240,7 @@ nav .login-signup a.signup-btn:hover {
 .container1 {
   text-align: center;
   /* padding: 20px; */
-  /* border: 1 px solid #f2f6ff; */
-  /* border: 5px; */
   width: auto;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -260,9 +257,7 @@ nav .login-signup a.signup-btn:hover {
   padding: 20px;
   padding-top: 60px;
   padding-bottom: 80px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
 }
 
@@ -306,9 +301,7 @@ nav .login-signup a.signup-btn:hover {
 .container3 {
   text-align: center;
   padding: 20px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .title3 {
@@ -335,7 +328,6 @@ nav .login-signup a.signup-btn:hover {
   font-size: 20px;
   line-height: 1.4;
   text-align: justify;
-  /* height: 100%; */
   display: flex;
   /* background-color: #000; */
 }
@@ -352,9 +344,7 @@ nav .login-signup a.signup-btn:hover {
 .container4 {
   text-align: center;
   padding: 35px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
 }
 
@@ -459,7 +449,6 @@ nav .login-signup a.signup-btn:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #f2f2f2;
-  /* background: rgba(255, 255, 255, 0.7); Latar belakang semi-transparan */
   padding: 10px;
   z-index: 6;
   font: optional;
@@ -467,16 +456,15 @@ nav .login-signup a.signup-btn:hover {
 }
 
 .centered .title {
-  font-size: 125px;
+  font-size: 110px;
   margin: 0;
   width: 100%;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Shojumaru'
   /* background-color: black; */
 }
 
 .centered .subtitle {
   margin-top: 0;
-  /* line-height: 24px; */
   line-height: 2em;
   /* background: #000; */
   word-spacing: 0.09em;
