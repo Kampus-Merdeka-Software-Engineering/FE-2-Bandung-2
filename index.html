@@ -23,6 +23,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" referrerpolicy="no-referrer" 
     />
+    <link href='https://fonts.googleapis.com/css?family=Shojumaru' rel='stylesheet'>
     <title>GO!Semarang</title>
   </head>
   <body>
@@ -37,27 +38,27 @@
             />
           </a>
         </div>
-        <div class="menu">
-          <a href="#" class="tombol-menu">
-            <span class="garis"></span>
-            <span class="garis"></span>
-            <span class="garis"></span>
-          </a>
+        <div class="menu menu-active" id="menu">
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#destination">Destinations</a></li>
             <li><a href="#aboutus">About Us</a></li>
             <li><a href="#ourteam">Our Team</a></li>
           </ul>
+          <div class="login-signup">
+            <a href="../FE-2-Bandung-2/html/login.html" class="login-btn"
+              >Login</a
+            >
+            <a href="../FE-2-Bandung-2/html/signup.html" class="signup-btn"
+              >Sign Up</a
+            >
+          </div>
         </div>
-        <div class="login-signup">
-          <a href="../FE-2-Bandung-2/html/login.html" class="login-btn"
-            >Login</a
-          >
-          <a href="../FE-2-Bandung-2/html/signup.html" class="signup-btn"
-            >Sign Up</a
-          >
-        </div>
+      </div>
+      <div class="tombol-menu" id="tombol-menu">
+        <span class="garis"></span>
+        <span class="garis"></span>
+        <span class="garis"></span>
       </div>
     </nav>
 
@@ -537,17 +538,17 @@
             <h6>Maria Ulfa Salsabilla</h6>
             <span>Front-End Developer</span>
           </div>
-          <div class="second-row">
+          <div>
             <img src="Assets/aura.jpg" alt="" />
             <h6>Aura Isni Qurrota'ayun</h6>
             <span>Back-End Developer</span>
           </div>
-          <div class="second-row">
+          <div>
             <img src="Assets/nabillah.jpg" alt="" />
             <h6>Nabillah Santi Dewi Lestari</h6>
             <span>Back-End Developer</span>
           </div>
-          <div class="second-row">
+          <div>
             <img src="Assets/nurul.jpg" alt="" />
             <h6>Nurul Gunawan</h6>
             <span>Quality Assurance</span>
@@ -573,7 +574,6 @@
       <div class="container8">
         <div class="main">
           <div class="content2">
-            <h2>Contact Us</h2>
             <form action="#" method="post">
               <input type="text" name="name" placeholder="Enter Your Name" />
               <input
@@ -597,24 +597,25 @@
       <div class="container9">
         <div class="row">
           <div class="footer-left">
-            <a href="index.html">
+            <a href="#home">
               <img src="Assets/go-smg.png" alt="" />
             </a>
           </div>
           <div class="footer-col">
             <h4 class="menu">Menu</h4>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#destination">Destination</a></li>
               <li><a href="#aboutus">About Us</a></li>
               <li><a href="#ourteam">Our Team</a></li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div class="footer-col2">
             <h4>Contact Us</h4>
             <ul>
               <li>
-                <a href="#"> <i class="fas fa-phone"></i> 021-9876-2345</a>
+                <a href="#"> 
+                  <i class="fas fa-phone"></i> 021-9876-2345</a>
               </li>
               <li>
                 <a href="#">
@@ -623,7 +624,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div class="footer-col3">
             <h4>Follow Us On</h4>
             <div class="social-links">
               <a href="#"><i class="fab fa-whatsapp"></i></a>

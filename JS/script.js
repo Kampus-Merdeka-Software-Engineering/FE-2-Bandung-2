@@ -31,6 +31,13 @@ setInterval(function () {
 }, 5000); // Pergantian slide setiap 5 detik
 // End Slide Session //
 
+const head = document.getElementById('menu');
+const burger = document.getElementById('tombol-menu');
+
+burger.addEventListener('click', function () {
+  head.classList.toggle('menu-active');
+});
+
 /* login.html dan login.css */
 const container = document.getElementById("container");
 const registerBtn = document.getElementById("register");
@@ -253,5 +260,41 @@ function mappingDestinations() {
       </div>`;
     div.innerHTML = card;
     boxContainer.append(div);
+  }
+}
+
+//fitur contact us
+// const form = document.getElementById('contactForm');
+
+form.addEventListener('submit',async function (event) {
+  event.preventDefault(); // Mencegah perilaku default formulir
+  postMessage();
+});
+
+
+async function postMessage() {
+  const nameField = document.getElementById('nameField');
+  const emailField = document.getElementById('emailField');
+  const messageField = document.getElementById('messageField');
+ 
+  const body = 
+    {
+      fullname: nameField.value,
+      email: emailField.value,
+      message: messageField.value,
+    };
+ 
+  const response = await fetch('https://be-2-bandung-2-production.up.railway.app/contactus/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+ 
+  if (response.ok) {
+    alert('Pesan terkirim');
+  } else {
+    alert('Gagal mengirim pesan. Silakan coba lagi');
   }
 }

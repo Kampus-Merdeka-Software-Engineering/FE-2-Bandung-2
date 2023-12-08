@@ -990,7 +990,13 @@ ul {
   font-size: 15px;
   text-align: center;
 }
-
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  margin: 20px;
+}
 /* responsive */
 /* @media(max-width: 767px){
   .footer-col {
