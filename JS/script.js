@@ -31,35 +31,18 @@ setInterval(function () {
 }, 5000); // Pergantian slide setiap 5 detik
 // End Slide Session //
 
-const head = document.getElementById('menu');
-const burger = document.getElementById('tombol-menu');
-
-burger.addEventListener('click', function () {
-  head.classList.toggle('menu-active');
-});
-
 /* login.html dan login.css */
 const container = document.getElementById("container");
 const registerBtn = document.getElementById("register");
 const loginBtn = document.getElementById("login");
-registerBtn.addEventListener("click", () => {
-  container.classList.add("active");
-});
+// registerBtn.addEventListener("click", () => {
+//   container.classList.add("active");
+// });
 
-loginBtn.addEventListener("click", () => {
-  container.classList.remove("active");
-});
+// loginBtn.addEventListener("click", () => {
+//   container.classList.remove("active");
+// });
 // End Login //
-
-// Popup Session //
-function openPopup(popupId) {
-  document.getElementById(popupId).style.display = "block";
-}
-
-function closePopup(popupId) {
-  document.getElementById(popupId).style.display = "none";
-}
-// End Popup Session //
 
 //popup icon gantinya disini <===
 
@@ -141,160 +124,146 @@ function toggleFavorite(button) {
 
 // Tombol Goto destinasi di dalam pop up user
 function goToDestination() {
-    // Add your logic for what should happen when "Go to Destination" is clicked
     alert('Navigating to the destination...');
-    // You can replace the alert with your actual navigation logic
 }
 
+// get destination fron db
 window.onload = () => {
-  // getDestinations();
-  mappingDestinations();
+  getDestinations();
+  handleSearch();
 };
 
+let destinations = [];
+
 async function getDestinations() {
-  const res = await fetch("url/asdas/"); // urlnya dideploy team BE
-  const resJson = await res.json();
-}
-
-const form = document.querySelector('.form-field');
-
-form.addEventListener('submit', postMessage);
-
-async function postMessage() {
-  const name = document.querySelector('.name-field');
-  const email = document.querySelector('.email-field');
-  const message = document.querySelector('.message-field');
-  const data = {
-    name: name.value,
-    email: email.value,
-    message: message.value
+  try {
+    const res = await fetch("https://be-2-bandung-2-production.up.railway.app/destination/get");
+    const resJson = await res.json();
+    destinations = resJson;
+    mappingDestinations(destinations);
+  } catch (error) {
+    console.error('Error fetching destinations:', error);
   }
-  const res = await fetch("url", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }); // urlnya dideploy team BE
-  const resJson = await res.json();
 }
 
-// hardcode response BE
-const datas = [
-  {
-    title: "Lawang Sewu",
-    location: "Semarang",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/lawang_sewu.png",
-    id_popup: "pop-lawang"
-  },
-  {
-    title: "Kuil Sam Poo Kong",
-    location: "Semarang",
-    id_popup: "pop-candi",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/kuil_sam.png",
-  },
-  {
-    title: "Candi Gedong Songo",
-    location: "Semarang",
-    id_popup: "pop-kuil",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/candi_gedong.png",
-  },
-  {
-    title: "Taman Bunga Celosia",
-    location: "Semarang",
-    id_popup: "pop-taman",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/taman_celosia.png",
-  },
-  {
-    title: "Curug Lawe Benowo",
-    location: "Semarang",
-    id_popup: "pop-curug",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/curug_lawe.png",
-  },
-  {
-    title: "Dusun Semilir",
-    location: "Semarang",
-    id_popup: "pop-dusun",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/dusun_semilir.png",
-  },
-  {
-    title: "Kopeng Treetop Adventure",
-    location: "Semarang",
-    id_popup: "pop-kopeng",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/kopeng.png",
-  },
-  {
-    title: "Museum Ambarawa",
-    location: "Semarang",
-    id_popup: "pop-museum",
-    description: "Kopeng Treetop Adventure is an adventure park located in Kopeng, Central Java, Indonesia. The park is located in the middle of the forest and offers various adventure activitie such as treetop walking, flying fox, and various other challenges at high altitude.",
-    image:
-      "https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-2/Assets/museum_ambarawa.png",
-  },
-];
+// mapping destinations
+async function mappingDestinations(destinations) {
+  boxContainer.innerHTML = ''; // Clear existing content
 
-// looping response data
-const boxContainer = document.querySelector(".box-container");
-
-function mappingDestinations() {
-  for (let i = 0; i < datas.length; i++) {
+  for (let i = 0; i < destinations.length; i++) {
     const div = document.createElement("div");
     div.classList.add("box");
     const card = `
       <div class="image">
-        <img src="${datas[i].image}" alt="" />
+        <img src="${destinations[i].image}" alt="" />
       </div>
-      <div class="content">
-        <h3>${datas[i].title}</h3>
-        <p>${datas[i].location}</p>
-        <button onclick="openPopup('${datas[i].id_popup}')">
-          <p3>Read More > </p3>
-        </button>
-      </div>`;
+      <div class="content"> 
+      <h3>${destinations[i].title}</h3>
+      <p>${truncateText(destinations[i].location, 30)}</p>
+      <button id="read-more-button" onclick="openPopup('${destinations[i].id}')">
+        <p3>Read More > </p3>
+      </button>
+    </div>`;
     div.innerHTML = card;
     boxContainer.append(div);
   }
 }
 
-//fitur contact us
-// const form = document.getElementById('contactForm');
+function truncateText(text, maxLength) {
+  return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+}
 
-form.addEventListener('submit',async function (event) {
-  event.preventDefault(); // Mencegah perilaku default formulir
-  postMessage();
-});
+// fitur search
+function handleSearch() {
+  const searchTerm = searchBox.value.toLowerCase();
+
+  const filteredDestinations = destinations.filter(destination =>
+    destination.title.toLowerCase().includes(searchTerm) ||
+    destination.location.toLowerCase().includes(searchTerm)
+  );
+
+  mappingDestinations(filteredDestinations);
+}
+
+const searchBox = document.getElementById('search-box');
+const boxContainer = document.querySelector(".box-container");
+
+searchBox.addEventListener('input', handleSearch);
+
+// popup pkonya 
+async function displayPopup() {
+  const response = await fetch("https://be-2-bandung-2-production.up.railway.app/destination/get");
+  const destinations = await response.json();
+  
+    for (let i = 0; i < destinations.length; i++) {
+      const div = document.createElement("div");
+      div.classList.add("popup");
+      const popup = `
+        <div class="popup" id="${destinations[i].id}">
+          <span class="close" onclick="closePopup('${destinations[i].id}')">&times;</span>
+          <div class="popup-content">
+            <img src="${destinations[i].image}" alt="" class="popup-img" />
+            <div class="popup-text">
+              <h2>${destinations[i].title}</h2>
+              <p class="popup-paragraph">
+                <i class="fas fa-map-marker-alt location-icon"></i> ${destinations[i].location}
+              </p>
+              <p class="popup-time">
+                <i class="far fa-clock time-icon"></i> ${destinations[i].time}
+              </p>
+              <p>
+                ${destinations[i].description}
+              </p>
+            </div>
+          </div>
+        </div>`;
+      div.innerHTML = popup;
+      boxContainer.append(div);
+    };
+
+    // Attach event listeners to the "Read More" buttons
+    const readMoreButtons = document.querySelectorAll('.read-more-button');
+    readMoreButtons.forEach((button) => {
+      const destinationsId = button.id.replace('read-more-button', '');
+      button.addEventListener('click', () => openPopup(destinationsId));
+    });
+    
+}
+
+function openPopup(displayPopupId) {
+  document.getElementById(displayPopupId).style.display = "block";
+
+}
+
+function closePopup(displayPopupId) {
+  document.getElementById(displayPopupId).style.display = "none";
+}
 
 
+// fitur contact us
 async function postMessage() {
   const nameField = document.getElementById('nameField');
   const emailField = document.getElementById('emailField');
   const messageField = document.getElementById('messageField');
  
   const body = 
-    {
-      fullname: nameField.value,
-      email: emailField.value,
-      message: messageField.value,
-    };
+     {
+       fullname: nameField.value,
+       email: emailField.value,
+       message: messageField.value,
+     };
  
   const response = await fetch('https://be-2-bandung-2-production.up.railway.app/contactus/create', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(body),
   });
  
   if (response.ok) {
-    alert('Pesan terkirim');
+     alert('Pesan terkirim');
   } else {
-    alert('Gagal mengirim pesan. Silakan coba lagi');
+     alert('Gagal mengirim pesan. Silakan coba lagi');
   }
-}
+ }

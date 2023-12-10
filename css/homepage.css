@@ -8,7 +8,6 @@ body {
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f2f6ff;
-  /* display: flex; */
 }
 
 nav {
@@ -18,8 +17,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent; /* Initial background color */
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 nav.scrolled {
@@ -43,12 +42,10 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Pusatkan elemen ul */
-  align-items: center; /* Pusatkan elemen ul */
 }
 
 nav ul li {
-  margin: 0 10px; /* Jarak antar elemen li */
+  margin-right: 20px;
 }
 
 nav ul li a {
@@ -62,8 +59,7 @@ nav ul li a:hover {
   color: #555;
 }
 
-nav .menu,
-nav .login-signup {
+nav .menu {
   display: flex;
   align-items: center;
 }
@@ -72,218 +68,16 @@ nav .tombol-menu {
   display: none;
 }
 
-/* Pop up user */
-
-.icon-user {
-  position: relative;
-  display: inline-block;
-}
-
-.icon-user i {
-  cursor: pointer;
-}
-
-.pop-up-user {
-  /* display: none; */
-  position: absolute;
-  top: 50px; /* Sesuaikan dengan posisi yang diinginkan */
-  right: 0;
-  width: 190px; /* Sesuaikan lebar popup dengan 210px */
-  height: 100px; /* Sesuaikan tinggi popup dengan 100px */
-  background-color: rgba(255, 255, 255, 0.4); /* Warna latar belakang dengan alpha untuk efek bening */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 10px; /* Mengurangi padding agar sesuai dengan tinggi yang diinginkan */
-  z-index: 1; /* Pastikan popup tampil di atas elemen lainnya */
-  backdrop-filter: blur(5px); /* Efek blur */
-}
-
-.pop-up-user ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.pop-up-user li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.pop-up-user li:last-child {
-  border-bottom: none;
-}
-
-.pop-up-user-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.favorite-container,
-.logout-container {
-  margin: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.favorite-container i {
-  margin-right: 5px;
-}
-
-/* Menambahkan CSS untuk mengubah urutan elemen */
-.favorite-container {
-  order: 1; /* Menempatkan elemen favorite di atas elemen logout */
-}
-
-.logout-container {
-  order: 2; /* Menempatkan elemen logout di bawah elemen favorite */
-}
-
-.love-icon-popup {
-  vertical-align: middle; /* Membuat ikon dan teks sejajar vertikal */
-  color: black; /* Membuat warna ikon transparan */
-}
-
-.logout-icon-popup {
-  vertical-align: middle; /* Membuat ikon dan teks sejajar vertikal */
-  color: black; /* Membuat warna ikon transparan */
-}
-
-
-/* Style untuk ikon user */
-.far.fa-user-circle {
-  color: #fff; /* Warna ikon */
-  margin-left: auto;
-}
-
-/* Additional styles for the new popup */
-.popup-favorite {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 1178px; /* Set the width */
-  height: 555px; /* Set the height */
-  background-color: #fff;
-  z-index: 1000;
-  border-radius: 25px;
-}
-
-.popup-favorite .close {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-}
-
-.favorites-title,
-.favorites-subtitle,
-.go-to-text { 
-  font-family: 'Poppins', sans-serif; /* Specify the Poppins font */
-}
-
-.favorites-title {
-  font-weight: bold;
-  font-size: 35px;
-  margin-bottom: 10px;
-  padding-left: 96px;
-  padding-top: 70px;
-}
-
-.favorites-subtitle {
-  font-size: 16px;
-  padding-left: 96px;
-}
-
-.go-to-text {
-  text-align: right;
-  font-size: 16px;
-  margin-top: 0; /* Adjust the margin-top based on your preference */
-  padding-top: 120px;
-  padding-left: 542px;
-  cursor: pointer; /* Add cursor pointer for indicating it's clickable */
-  text-decoration: underline; /* Add underline for the text */
-}
-
-/* Responsive styles for smaller screens */
-@media screen and (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  nav ul li {
-    margin: 0;
-    text-align: center;
-    padding: 10px;
-  }
-
-  nav .tombol-menu {
-    display: block;
-    cursor: pointer;
-  }
-
-  nav .layar-dalam {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav .menu {
-    margin-top: 10px;
-  }
-
-  nav .tombol-menu {
-    display: block;
-    cursor: pointer;
-  }
-
-  /* Add new styles for the hamburger icon */
-  nav .tombol-menu .garis {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-
-  nav .menu.active .garis:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  nav .menu.active .garis:nth-child(2) {
-    opacity: 0;
-  }
-
-  nav .menu.active .garis:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-}
-
 .slider {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ubah tinggi menjadi 100vh untuk mengisi seluruh layar */
+  height: 100vh; 
   overflow: hidden;
 }
 
 .slides {
   width: 500%;
-  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
+  height: 100%; 
   display: flex;
   transition: 2s;
 }
@@ -294,7 +88,7 @@ nav .tombol-menu {
 
 .slide {
   width: 20%;
-  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
+  height: 100%; 
   transition: 2s;
   display: inline;
   text-align: center;
@@ -302,8 +96,8 @@ nav .tombol-menu {
 
 .slide img {
   width: 100%;
-  height: 100%; /* Ubah tinggi menjadi 100% untuk mengisi seluruh tinggi carousel */
-  object-fit: cover; /* Pastikan gambar mengisi area slide dengan benar */
+  height: 100%; 
+  object-fit: cover; 
 }
 
 /* CSS for navigation */
@@ -347,7 +141,6 @@ nav .tombol-menu {
 
 .container1 {
   text-align: center;
-  /* padding: 20px; */
   width: auto;
   overflow: hidden;
   position: relative;
@@ -388,7 +181,6 @@ nav .tombol-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #0074d9; */
 }
 
 .container2 p {
@@ -399,7 +191,6 @@ nav .tombol-menu {
   line-height: 1.4;
   text-align: justify;
   height: 100%;
-  /* background-color: #000; */
 }
 
 .container2 img {
@@ -409,9 +200,7 @@ nav .tombol-menu {
 .container3 {
   text-align: center;
   padding: 20px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .title3 {
@@ -433,14 +222,11 @@ nav .tombol-menu {
   margin-left: 5px;
   margin-right: 40px;
   margin-bottom: 50px;
-  /* width: 55%; */
   word-spacing: 5px;
   font-size: 20px;
   line-height: 1.4;
   text-align: justify;
-  /* height: 100%; */
   display: flex;
-  /* background-color: #000; */
 }
 
 .container3 img {
@@ -455,9 +241,7 @@ nav .tombol-menu {
 .container4 {
   text-align: center;
   padding: 35px;
-  /* border: 1 px solid #f2f6ff; */
   border: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
 }
 
@@ -486,37 +270,6 @@ nav .tombol-menu {
   font-size: 16px;
 }
 
-/* @mixin grid($val) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
-  gap: 1.5rem;
-} */
-
-/* .destination .box-container{
-  @include grid(27rem);
-
-  .box{
-    border-radius: 1rem;
-    overflow: hidden;
-
-    &:hover img{
-      transform: scale(1.1);
-    }
-
-    .image{
-      height: 20rem;
-      overflow: hidden;
-      width: 100%;
-
-
-      img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-} */
 
 .search {
   text-align: center;
@@ -525,25 +278,15 @@ nav .tombol-menu {
 
 .search-box {
   padding: 10px;
-  width: 260px; /* Sesuaikan lebar dengan ikon */
+  width: 260px; 
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
-.search-button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
 .container4 .box-container {
-  justify-content: center;
-  gap: 2em;
+  justify-content: space-around;
+  gap: 1em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -557,6 +300,7 @@ nav .tombol-menu {
 
 .image:hover img {
   transform: scale(1.1);
+  transition: all 0.4s;
 }
 
 .content {
@@ -587,13 +331,6 @@ nav .tombol-menu {
   color: #003380;
 }
 
-/* .content .i .fas {
-  padding-right: 1em;
-} */
-
-/* .fas:hover {
-  padding-left: 0.5em;
-} */
 
 .centered {
   width: 60%;
@@ -605,7 +342,6 @@ nav .tombol-menu {
   padding: 10px;
   z-index: 6;
   font: optional;
-  /* background-color: red; */
 }
 
 .centered .title {
@@ -613,14 +349,11 @@ nav .tombol-menu {
   margin: 0;
   width: 100%;
   font-family: 'Shojumaru'
-  /* background-color: black; */
 }
 
 .centered .subtitle {
   margin-top: 0;
-  /* line-height: 24px; */
   line-height: 2em;
-  /* background: #000; */
   word-spacing: 0.09em;
 }
 
@@ -632,7 +365,7 @@ nav .tombol-menu {
 }
 
 .slider {
-  width: auto; /* Sesuaikan dengan lebar gambar */
+  width: auto; 
   height: 100%;
   background: #000;
 }
@@ -710,15 +443,14 @@ nav .tombol-menu {
 
 .team img {
   width: 80%;
-  height: 350px; /* Buat spesifik ketinggian foto biar jadi sama */
-  object-fit: cover; /* Membenarkan aspek rasio dan cover container */
+  height: 350px; 
+  object-fit: cover; 
   box-shadow: 0px -10px 30px #ccc;
   border-radius: 20px;
 }
 
 .team {
   display: flex;
-  flex-direction: wrap;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 30px;
@@ -735,67 +467,23 @@ nav .tombol-menu {
 .team div {
   text-align: center;
   width: 26%;
-  margin-bottom: 20px; /* Menambah margin untuk membuat ruang tiap items */
+  margin-bottom: 45px; 
 }
 
 .team span {
   font-size: 18px;
 }
 
-.second-row {
-  margin-top: 25px;
-  width: 100%; /* Membuat items di second row memiliki full width*/
-}
-
-.container7 {
-  height: 125vh;
-  border: 1px solid;
-  background-image: url("../Assets/sunset-pantai-marina.jpg");
-  background-size: cover;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title7 h2 {
-  color: white;
-  z-index: 1;
-  padding: 20px 25px;
-  font-size: 48px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  text-align: center;
-  line-height: 1.5em;
-}
-
-.button7 {
-  display: inline-block;
-  padding: 13px;
-  border-radius: 13px;
-  background-color: white;
-  color: #0074d9;
-  font-size: 15px;
-  font-weight: 350;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  text-align: center;
-}
-
 .popup {
-  display: none; /* Mengubah display menjadi none */
+  display: none;
   align-items: center;
-  border-radius: 25px; /* Menambahkan lengkungan pada border */
+  border-radius: 25px; 
   position: fixed;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1178px; /* Sesuaikan dengan lebar yang diinginkan */
-  height: 530px; /* Sesuaikan dengan tinggi yang diinginkan */
+  width: 1178px; 
+  height: 530px; 
   border: 0px;
   padding: 0px;
   background: #fff;
@@ -815,18 +503,17 @@ nav .tombol-menu {
 }
 
 .popup-img {
-  width: 595px; /* Sesuaikan dengan lebar yang diinginkan */
-  height: 530px; /* Sesuaikan dengan tinggi yang diinginkan */
-  border-top-left-radius: 25px; /* Radius border di sebelah kiri atas gambar */
-  border-bottom-left-radius: 25px; /* Radius border di sebelah kiri bawah gambar */
+  width: 595px; 
+  height: 530px; 
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
 }
 
 .popup-text {
   width: 60%;
-  /*padding-left: 20px; */
   margin-left: 40px;
   margin-right: 70px;
-  text-align: left; /* Menentukan teks berada di sebelah kiri */
+  text-align: left;
 }
 
 .popup-text h2 {
@@ -837,61 +524,29 @@ nav .tombol-menu {
 .popup-paragraph {
   display: flexbox;
   font-size: 12px;
-  margin-left: 12px; /*Adjust margin as needed*/
-  margin-bottom: 5px; /* Menambahkan jarak dua baris */
-  color: #808080; /* Warna abu-abu muda untuk teks alamat */
+  margin-left: 12px; 
+  margin-bottom: 5px; 
+  color: #808080; 
   position: relative;
 }
 
 .popup-time {
   font-size: 12px;
   margin-bottom: 20px;
-  color: #808080; /* Warna abu-abu muda untuk teks waktu */
+  color: #808080; 
 }
 
 .time-icon {
   margin-right: 5px;
-  color: red; /* Tambahkan warna merah untuk ikon waktu */
+  color: red; 
   font-size: 12px;
 }
 
 .location-icon {
-  /* position: absolute; */
-  color: red; /* or any other color you prefer */
+  color: red;
   font-size: 12px;
   margin-left: -10px;
   margin-right: 5px;
-  /* Adjust margin as needed */
-}
-
-.popup-text button {
-  background-color: #fff;
-  color: #3498db;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: 1px solid #3498db;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
- .btn-fav {
-   margin-top: 120px;
- }
-
-.popup-text button:hover {
-  background-color: #3498db;
-  color: #fff;
-  border-color: #fff; /* Change border color on hover */
-}
-.btn-fav.favorite {
-  background-color: #3498db;
-  border-color: #3498db;
-  color: #fff;
-}
-
-.btn-fav.favorite:hover {
-  background-color: #3498db;
 }
 
 * {
@@ -1016,42 +671,14 @@ textarea {
   border: 1px solid #3498db;
 }
 
-@media (max-width: 736px) {
-  .contact-form {
-    grid-template-rows: auto;
-  }
-
-  .contact-form .main {
-    flex-direction: column;
-    margin: 15px 0;
-  }
-
-  .content2,
-  .form-img {
-    flex-basis: 100%;
-    border-radius: 8px;
-  }
-
-  .form-img {
-    order: 2;
-    margin-top: 15px;
-  }
-
-  .content2 {
-    margin-bottom: 15px;
-  }
-}
-
 .container9 {
   max-width: 1170px;
-  /* background-color: red; */
   margin: auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  /* background-color: orange; */
 }
 
 ul {
@@ -1065,9 +692,17 @@ ul {
 
 .footer-col {
   width: 25%;
-  /* margin-right: 4em; */
   padding: 0 25px;
-  /* background-color: red; */
+}
+
+.footer-col2 {
+  width: 25%;
+  padding: 0 25px;
+}
+
+.footer-col3 {
+  width: 25%;
+  padding: 0 25px;
 }
 
 .footer-col h4 {
@@ -1098,7 +733,6 @@ ul {
 
 .footer-col ul li a {
   font-size: 16px;
-  /* text-transform: capitalize; */
   color: white;
   text-decoration: none;
   font-weight: 300;
@@ -1130,11 +764,131 @@ ul {
   background-color: aqua;
 }
 
+.footer-col2 h4 {
+  font-size: 18px;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col2 h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #f2f2f2;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col2 ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col2 ul li a {
+  font-size: 16px;
+  /* text-transform: capitalize; */
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col2 ul li a:hover {
+  color: white;
+  padding-left: 2px;
+}
+
+.footer-col2 .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.footer-col2 .social-links a:hover {
+  color: #f2f6ff;
+  background-color: aqua;
+}
+
+/* footer col3 */
+.footer-col3 h4 {
+  font-size: 18px;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col3 h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #f2f2f2;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col3 ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col3 ul li a {
+  font-size: 16px;
+  /* text-transform: capitalize; */
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col3 ul li a:hover {
+  color: white;
+  padding-left: 2px;
+}
+
+.footer-col3 .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.footer-col3 .social-links a:hover {
+  color: #f2f6ff;
+  background-color: aqua;
+}
+
 .footer-left img {
   width: 100%;
   vertical-align: middle;
   margin-top: 65px;
-  /* background-color: #4CAF50; */
 }
 .footer-left div {
   margin-right: 25px;
@@ -1142,7 +896,6 @@ ul {
 
 .footer-left {
   margin-right: 4em;
-  /* background-color: red; */
 }
 
 .rights {
@@ -1156,16 +909,1080 @@ ul {
   text-align: center;
 }
 
-/* responsive */
-/* @media(max-width: 767px){
-  .footer-col {
+@media screen and (min-width: 901px) and (max-width: 1200px){
+
+  nav .logo img{
+    width: 100px;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+ 
+  .nav-btn {
+    margin: 0 5px;
+    padding: 3px;
+  }
+
+  .slider img {
+    height: 55vh;
+  }
+
+  .title2 {
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .subtitle2 {
+    margin-bottom: 1em;
+    margin-top: 1.4em;
+    font-size: 0.9em;
+  }
+
+  .container2 {
+    padding: 20px;
+  }
+
+  .container2 p {
+    width: 100%;
+    word-spacing: 2px;
+    font-size: 11px;
+  }
+
+  .container2 div {
+    margin: 20px 3% 0 3%;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container2 img {
+    width: 52%;
+  }
+
+  .centered {
+    width: 75%;
+  }
+
+  .centered .title {
+    font-size: 54px;
+  }
+
+  .centered .subtitle {
+    font-size: 12px;
+  }
+  .container3 {
+    text-align: center;
+    padding: 20px;
+    border: 5px;
+  }
+  .container3 h1 {
+    margin-top: 0px;
+    letter-spacing: 2px;
+    font-size: 36px;
+  }
+
+  .title3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container3 img {
     width: 50%;
+    height: 50%;
+    margin: 20px 0 0 0;
+  }
+
+  .container3 p {
+    margin: 20px 0 0 0;
+    justify-content: space-between;
+    word-spacing: 2px;
+    font-size: 10px;
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+  }
+  .container4 .box-container {
+    margin-top: -25px;
+  }
+  .container4 {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .container4 h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  .search input[type='text'] {
+    width: 52%;
+    height: 30px;
+    font-size: 12px;
+  }
+  .search button {
+    background-color: #0074d9;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .box {
+    width: 160px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #b4dcff;
+  }
+  .image img {
+    width: 100%;
+  }
+  .content {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content h3 {
+    font-size: 0.7em;
+  }
+  .content p {
+    font-size: 0.7em;
+    padding: 0;
+  }
+  .content button {
+    width: 50%;
+    display: flex;
+    height: 15px;
+    font-size: 0.9em;
+    justify-content: center;
+    align-items: center;
+  }
+  .content p3 {
+    font-size: 0.7em;
+  }
+
+  .title5 {
+    max-width: 90%;
+  }
+  .container5 {
+    width: 100%;
+    padding: 35px 0px;
+  }
+  .container5 img {
+    height: auto;
+    width: 172px;
+  }
+  .about-text h1 {
+    font-size: 20px;
+    margin: 0 0 0 20px;
+  }
+  .about-text p {
+    letter-spacing: 1px;
+    line-height: 12px;
+    font-size: 11px;
+    margin: 6px 0 10px 20px;
+  }
+  .button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    margin: 0 0 0 20px;
+  }
+
+  .title6 {
+    margin-top: 25px;
+  }
+
+  .title6 h1 {
+    font-size: 30px;
     margin-bottom: 30px;
+  }
+
+  .team {
+    gap: 21px;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  .team div {
+    text-align: center;
+    min-width: 200px;
+    max-width: 200px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .team img {
+    width: 75%;
+    height: 145px;
+    object-fit: cover;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 10px;
+  }
+  .team h6 {
+    font-size: 9px;
+    margin-top: 6px;
+  }
+  .team span {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+  .content2 {
+    padding: 1em 1em;
+    border-radius: 10px 0 0 10px;
+  }
+  .contact-form input,
+  textarea {
+    outline: none;
+    margin-bottom: 15px;
+    font-stretch: 16px;
+    color: black;
+    padding: 10px 18px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    background: #00000014;
+    transition: 0.3s ease;
+  }
+
+  .contact-form {
+    min-height: 0;
+  }
+
+  .contact-form form {
+    margin: 15px 0;
+  }
+
+  .contact-form button {
+    font-size: 17px;
+    padding: 7px 0;
+  }
+
+  .footer-left {
+    display: flex;
+    width: 18%;
+    margin: 5px;
+    align-items: center;
+  }
+
+  .footer-left img {
+    margin: 0;
+  }
+
+  .footer-col3 .social-links a {
+    margin: 4px 5px;
+    height: 30px;
+    width: 30px;
+    line-height: 32px;
+  }
+
+  .footer-col {
+    width: 20%;
+    padding: 0;
+  }
+
+  .footer-col2 {
+    width: 30%;
+    padding: 0;
+  }
+
+  .footer-col3 {
+    width: 20%;
+    padding: 0;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .footer-col2 h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .footer-col3 h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul li a {
+    font-size: 10px;
+  }
+
+  .footer-col2 ul li a {
+    font-size: 10px;
+  }
+
+  .footer-col3 ul li a {
+    font-size: 10px;
+  }
+
+  .rights p {
+    padding: 5px;
+    font-size: 11px;
+    text-align: center;
   }
 }
 
-@media(max-width: 574px){
-  .footer-col {
+@media screen and (min-width: 552px) and (max-width: 900px){
+
+  nav .logo img{
+    width: 100px;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+ 
+  .nav-btn {
+    margin: 0 5px;
+    padding: 3px;
+  }
+
+  .slider img {
+    height: 55vh;
+  }
+
+  .title2 {
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .subtitle2 {
+    margin-bottom: 1em;
+    margin-top: 1.4em;
+    font-size: 0.9em;
+  }
+
+  .container2 {
+    padding: 20px;
+  }
+
+  .container2 p {
+    width: 100%;
+    word-spacing: 2px;
+    font-size: 11px;
+  }
+
+  .container2 div {
+    margin: 20px 3% 0 3%;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container2 img {
+    width: 52%;
+  }
+
+  .centered {
+    width: 75%;
+  }
+
+  .centered .title {
+    font-size: 54px;
+  }
+
+  .centered .subtitle {
+    font-size: 12px;
+  }
+  .container3 {
+    text-align: center;
+    padding: 20px;
+    border: 5px;
+  }
+  .container3 h1 {
+    margin-top: 0px;
+    letter-spacing: 2px;
+    font-size: 36px;
+  }
+
+  .title3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container3 img {
+    width: 50%;
+    height: 50%;
+    margin: 20px 0 0 0;
+  }
+
+  .container3 p {
+    margin: 20px 0 0 0;
+    justify-content: space-between;
+    word-spacing: 2px;
+    font-size: 10px;
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+  }
+  .container4 .box-container {
+    margin-top: -25px;
+  }
+  .container4 {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .container4 h1 {
+    font-size: 36px;
+    margin: 0;
+  }
+  .search input[type='text'] {
+    width: 52%;
+    height: 30px;
+    font-size: 12px;
+  }
+  .search button {
+    background-color: #0074d9;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .box {
+    width: 160px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #b4dcff;
+  }
+  .image img {
     width: 100%;
   }
-} */
+  .content {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content h3 {
+    font-size: 0.7em;
+  }
+  .content p {
+    font-size: 0.7em;
+    padding: 0;
+  }
+  .content button {
+    width: 50%;
+    display: flex;
+    height: 15px;
+    font-size: 0.9em;
+    justify-content: center;
+    align-items: center;
+  }
+  .content p3 {
+    font-size: 0.7em;
+  }
+
+  .title5 {
+    max-width: 90%;
+  }
+  .container5 {
+    width: 100%;
+    padding: 35px 0px;
+  }
+  .container5 img {
+    height: auto;
+    width: 172px;
+  }
+  .about-text h1 {
+    font-size: 20px;
+    margin: 0 0 0 20px;
+  }
+  .about-text p {
+    letter-spacing: 1px;
+    line-height: 12px;
+    font-size: 11px;
+    margin: 6px 0 10px 20px;
+  }
+  .button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    margin: 0 0 0 20px;
+  }
+
+  .title6 {
+    margin-top: 25px;
+  }
+
+  .title6 h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .team {
+    gap: 21px;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  .team div {
+    text-align: center;
+    min-width: 200px;
+    max-width: 200px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .team img {
+    width: 75%;
+    height: 145px;
+    object-fit: cover;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 10px;
+  }
+  .team h6 {
+    font-size: 9px;
+    margin-top: 6px;
+  }
+  .team span {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+  .content2 {
+    padding: 1em 1em;
+    border-radius: 10px 0 0 10px;
+  }
+  .contact-form input,
+  textarea {
+    outline: none;
+    margin-bottom: 15px;
+    font-stretch: 16px;
+    color: black;
+    padding: 10px 18px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    background: #00000014;
+    transition: 0.3s ease;
+  }
+
+  .contact-form {
+    min-height: 0;
+  }
+
+  .contact-form form {
+    margin: 15px 0;
+  }
+
+  .contact-form button {
+    font-size: 17px;
+    padding: 7px 0;
+  }
+
+  .footer-left {
+    display: flex;
+    width: 18%;
+    margin: 5px;
+    align-items: center;
+  }
+
+  .footer-left img {
+    margin: 0;
+  }
+
+  .footer-col3 .social-links a {
+    margin: 4px 5px;
+    height: 30px;
+    width: 30px;
+    line-height: 32px;
+  }
+
+  .footer-col {
+    width: 20%;
+    padding: 0;
+  }
+
+  .footer-col2 {
+    width: 30%;
+    padding: 0;
+  }
+
+  .footer-col3 {
+    width: 20%;
+    padding: 0;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .footer-col2 h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .footer-col3 h4 {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul li a {
+    font-size: 10px;
+  }
+
+  .footer-col2 ul li a {
+    font-size: 10px;
+  }
+
+  .footer-col3 ul li a {
+    font-size: 10px;
+  }
+
+  .rights p {
+    padding: 5px;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 551px) {
+  nav {
+    align-items: start;
+    justify-content: end;
+    background-color: #053b50;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  nav .layar-dalam {
+    align-items: start;
+    margin: 8px 25px 8px 0;
+    padding: 0;
+  }
+
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .menu-active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav .logo img {
+    width: 82px;
+  }
+
+  nav .tombol-menu {
+    display: block;
+    cursor: pointer;
+    margin: 1px 6px 0 0;
+  }
+
+  nav .tombol-menu .garis {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  nav .menu.active .garis:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  nav .menu.active .garis:nth-child(2) {
+    opacity: 0;
+  }
+
+  nav .menu.active .garis:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .tes {
+    display: block;
+  }
+
+  .nav-btn {
+    margin: 0 5px;
+    padding: 3px;
+  }
+
+  .slider img {
+    height: 37vh;
+  }
+
+  .title2 {
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .subtitle2 {
+    margin-bottom: 1em;
+    margin-top: 1.4em;
+    font-size: 0.6em;
+  }
+
+  .container2 {
+    padding: 20px;
+  }
+
+  .container2 p {
+    width: 100%;
+    word-spacing: 2px;
+    font-size: 10px;
+  }
+
+  .container2 div {
+    margin: 20px 3% 0 3%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container2 img {
+    width: 50%;
+  }
+
+  .centered .title {
+    font-size: 28px;
+  }
+
+  .centered .subtitle {
+    font-size: 7px;
+  }
+  .container3 {
+    text-align: center;
+    padding: 20px;
+    border: 5px;
+  }
+  .container3 h1 {
+    margin-top: 0px;
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+
+  .container3 h1 {
+    margin-top: 0px;
+    letter-spacing: 2px;
+    font-size: 22px;
+  }
+  .title3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container3 img {
+    width: 50%;
+    height: 50%;
+    margin: 15px 0 0 0;
+  }
+
+  .container3 p {
+    margin: 15px 0 0 0;
+    justify-content: space-between;
+    word-spacing: 2px;
+    font-size: 10px;
+    padding: 20px;
+    text-align: justify;
+    display: flex;
+  }
+  .container4 .box-container {
+    margin-top: -25px;
+  }
+  .container4 {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .container4 h1 {
+    font-size: 25px;
+    margin: 0;
+  }
+  .search input[type='text'] {
+    width: 80%;
+    height: 30px;
+    font-size: 10px;
+  }
+  .search button {
+    background-color: #0074d9;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .box {
+    width: 159px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #b4dcff;
+  }
+  .image img {
+    width: 100%;
+  }
+  .content {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content h3 {
+    font-size: 0.6em;
+  }
+  .content p {
+    font-size: 0.6em;
+    padding: 0;
+  }
+  .content button {
+    width: 50%;
+    display: flex;
+    height: 15px;
+    font-size: 0.9em;
+    justify-content: center;
+    align-items: center;
+  }
+  .content p3 {
+    font-size: 0.6em;
+  }
+
+  .title5 {
+    max-width: 90%;
+  }
+  .container5 {
+    width: 100%;
+    padding: 35px 0px;
+  }
+  .container5 img {
+    height: auto;
+    width: 126px;
+  }
+  .about-text h1 {
+    font-size: 16px;
+    margin: 0 0 0 10px;
+  }
+  .about-text p {
+    letter-spacing: 1px;
+    line-height: 11px;
+    font-size: 7px;
+    margin: 2px 0 10px 10px;
+  }
+  .button {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 9px;
+    margin: 0 0 0 10px;
+  }
+
+  .title6 {
+    margin-top: 25px;
+  }
+
+  .title6 h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .team h6 {
+    font-size: 3px;
+  }
+  .team span {
+    font-size: 3px;
+  }
+  .team {
+    gap: 15px;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  .team div {
+    text-align: center;
+    min-width: 161px;
+    max-width: 161px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .team img {
+    width: 75%;
+    height: 129px;
+    object-fit: cover;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 10px;
+  }
+  .team h6 {
+    font-size: 8px;
+    margin-top: 4px;
+  }
+  .team span {
+    font-size: 6px;
+    margin-top: 2px;
+  }
+  .content2 {
+    padding: 1em 1em;
+    border-radius: 20px;
+  }
+  .contact-form input,
+  textarea {
+    outline: none;
+    margin-bottom: 15px;
+    font-stretch: 16px;
+    color: black;
+    padding: 10px 18px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    background: #00000014;
+    transition: 0.3s ease;
+  }
+
+  .form-img {
+    display: none;
+  }
+
+  .contact-form {
+    min-height: 0;
+  }
+
+  .contact-form .main {
+    display: block;
+  }
+
+  .contact-form form {
+    margin: 15px 0;
+  }
+
+  .contact-form button {
+    font-size: 17px;
+    padding: 7px 0;
+  }
+
+  .footer-left {
+    display: flex;
+    width: 22%;
+    margin: 0;
+    align-items: center;
+  }
+
+  .footer-left img {
+    margin: 0;
+  }
+
+  .footer-col3 .social-links a {
+    margin: 4px 2px;
+    height: 25px;
+    width: 25px;
+    line-height: 27px;
+  }
+
+  .footer-col {
+    width: 15%;
+    padding: 0;
+  }
+
+  .footer-col2 {
+    width: 33%;
+    padding: 0;
+  }
+
+  .footer-col3 {
+    width: 20%;
+    padding: 0;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  .footer-col2 h4 {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  .footer-col3 h4 {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul li a {
+    font-size: 8px;
+  }
+  .footer-col2 h4 {
+    font-size: 11px;
+  }
+
+  .footer-col2 ul li a {
+    font-size: 8px;
+  }
+  .footer-col3 h4 {
+    font-size: 11px;
+  }
+
+  .footer-col3 ul li a {
+    font-size: 8px;
+  }
+  .rights p {
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
