@@ -31,6 +31,13 @@ setInterval(function () {
 }, 5000); // Pergantian slide setiap 5 detik
 // End Slide Session //
 
+const head = document.getElementById('menu');
+const burger = document.getElementById('tombol-menu');
+
+burger.addEventListener('click', function () {
+  head.classList.toggle('menu-active');
+});
+
 /* login.html dan login.css */
 const container = document.getElementById("container");
 const registerBtn = document.getElementById("register");
@@ -160,7 +167,7 @@ async function mappingDestinations(destinations) {
       <div class="content"> 
       <h3>${destinations[i].title}</h3>
       <p>${truncateText(destinations[i].location, 30)}</p>
-      <button id="read-more-button" onclick="openPopup('${destinations[i].id}')">
+      <button class="read-more-button" onclick="openPopup(${destinations[i].id})">
         <p3>Read More > </p3>
       </button>
     </div>`;
@@ -191,54 +198,32 @@ const boxContainer = document.querySelector(".box-container");
 searchBox.addEventListener('input', handleSearch);
 
 // popup pkonya 
-async function displayPopup() {
-  const response = await fetch("https://be-2-bandung-2-production.up.railway.app/destination/get");
-  const destinations = await response.json();
-  
-    for (let i = 0; i < destinations.length; i++) {
-      const div = document.createElement("div");
-      div.classList.add("popup");
-      const popup = `
-        <div class="popup" id="${destinations[i].id}">
-          <span class="close" onclick="closePopup('${destinations[i].id}')">&times;</span>
-          <div class="popup-content">
-            <img src="${destinations[i].image}" alt="" class="popup-img" />
-            <div class="popup-text">
-              <h2>${destinations[i].title}</h2>
-              <p class="popup-paragraph">
-                <i class="fas fa-map-marker-alt location-icon"></i> ${destinations[i].location}
-              </p>
-              <p class="popup-time">
-                <i class="far fa-clock time-icon"></i> ${destinations[i].time}
-              </p>
-              <p>
-                ${destinations[i].description}
-              </p>
-            </div>
-          </div>
-        </div>`;
-      div.innerHTML = popup;
-      boxContainer.append(div);
-    };
+function openPopup(id) {
+  const destination = findDestinationById(id);
 
-    // Attach event listeners to the "Read More" buttons
-    const readMoreButtons = document.querySelectorAll('.read-more-button');
-    readMoreButtons.forEach((button) => {
-      const destinationsId = button.id.replace('read-more-button', '');
-      button.addEventListener('click', () => openPopup(destinationsId));
-    });
-    
+  if (destination) {
+    document.getElementById('popup-title').innerText = destination.title;
+    document.getElementById('popup-time').innerHTML = `<i class="far fa-clock time-icon"></i> ${destination.time}`;
+    document.getElementById('popup-location').innerHTML = `<i class="fas fa-map-marker-alt location-icon"></i> ${destination.location}`;
+    document.getElementById('popup-description').innerText = destination.description;
+
+    const popupImage = document.getElementById('popup-img');
+    popupImage.src = destination.image; // Set the image source directly
+
+    document.getElementById('popup').style.display = 'block';
+  } else {
+    console.error(`Destination with id ${id} not found.`);
+  }
 }
 
-function openPopup(displayPopupId) {
-  document.getElementById(displayPopupId).style.display = "block";
-
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
 }
 
-function closePopup(displayPopupId) {
-  document.getElementById(displayPopupId).style.display = "none";
+function findDestinationById(id) {
+  // Assume destinations is an array containing all destination data
+  return destinations.find(destination => destination.id === id);
 }
-
 
 // fitur contact us
 async function postMessage() {
